@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div id="img_ene"><img src="../image/energia.png" alt="" id="energia"></div>
+        <div id="all">
+            <main>
+                <h1>Login</h1>
+                <div class="itens" id="apelido">
+                    <p>Nome</p>
+                    <input type="text" name="nome" id="nome">
+                </div>
+                <div class="itens" id="email">
+                    <p>Email</p>
+                    <input type="email" id="email_item" name="email" placeholder="usuário123@gmail.com">
+                </div>
+                <div class="itens" id="senha">
+                    <p>Senha</p>
+                    <input type="password" id="password" name="password" placeholder="insira sua senha">
+                </div>
+                <button onclick="enviar()">Enviar</button>
+            </main>
+        </div>
+
+    <audio id="morse" loop>
+        <source src="../morse.wav">
+    </audio>
+    <script>
+        const som = document.getElementById("morse");
+
+        som.volume = 1;
+
+        function enviar(){
+            let nome = document.getElementById('nome').value
+            let email = document.getElementById('email_item').value
+            let senha = document.getElementById('password').value
+        
+            if (nome == 'Arthur Navarro' && email == 'drnavarro83@gmail.com' && senha == 'Cassandra2007'){
+                som.play().catch(() => {});
+                document.getElementById('all').style.display = 'none'
+                document.getElementById('img_ene').style.display = 'block'
+                document.body.style.backgroundColor = 'black';
+            }
+            else{
+                alert('INFORMAÇÃO INVÁLIDA')
+            }
+        }
+    </script>
+</body>
+</html>
